@@ -1,0 +1,148 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Chatbot
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
+  <style>
+    @keyframes thinking {
+             0% { opacity: 0.2; }
+             50% { opacity: 1; }
+             100% { opacity: 0.2; }
+         }
+         .thinking {
+             animation: thinking 1s infinite;
+         }
+        
+   </style>
+
+
+</head>
+ <body class="bg-gray-100 font-sans">
+  <div class="flex h-screen">
+   <!-- Sidebar -->
+   <div class="w-1/4 bg-gray-900 text-white flex flex-col">
+    <div class="p-4 flex items-center">
+     <i class="fas fa-robot text-2xl mr-2">
+     </i>
+     <div>
+      <h1 class="text-lg font-bold">
+       APOLLO
+      </h1>
+      <p class="text-sm">
+       by TheRayhan
+      </p>
+     </div>
+    </div>
+    <button class="bg-blue-500 text-white py-2 px-4 rounded-lg mx-4 my-2" onclick="newTab()">
+     New Chat
+    </button>
+    <div class="px-4 mt-4">
+     <h2 class="text-lg font-bold text-yellow-400">
+      Terms and Conditions
+     </h2>
+     <p class="text-gray-400 mt-2">
+      It's a temporary chat for privacy reasons.
+      <span class="text-red-500">
+       Be careful. Do not refresh your browser tab.
+      </span>
+     </p>
+     <p class="text-green-500 mt-2">
+      All conversations are not saved. Once you leave, the chat history will be lost.
+     </p>
+     <p class="text-gray-400 mt-2">
+      Do not share any personal or sensitive information in the chat.
+     </p>
+    </div>
+    <div class="flex-1">
+    </div>
+    <div class="p-4 bg-gray-800">
+     <button class="bg-green-500 text-white py-2 px-4 rounded-lg w-full">
+      Upgrade Premium
+     </button>
+     <p class="text-xs text-gray-400 mt-2">
+      Better speed, more research
+     </p>
+    </div>
+   </div>
+   <!-- Main Content -->
+   <div class="flex-1 flex flex-col p-8" >
+    <div class="flex-1 overflow-y-auto">
+     <div class="text-center mb-8">
+      <i class="fas fa-robot text-5xl mb-4">
+      </i>
+      <h1 class="text-2xl font-bold mb-2">
+       Welcome to the APOLLO
+      </h1>
+      <p class="text-gray-600 mb-8">
+       Your Personal AI Companion
+      </p>
+      <div class="flex space-x-4">
+       <div class="bg-white p-4 rounded-lg shadow-md w-1/3">
+        <i class="fas fa-book-open text-xl mb-2">
+        </i>
+        <h2 class="font-semibold">
+         Explore various subjects
+        </h2>
+        <p class="text-gray-600 mt-2">
+         "Can you provide an overview of the latest advancements in artificial intelligence?"
+        </p>
+       </div>
+       <div class="bg-white p-4 rounded-lg shadow-md w-1/3">
+        <i class="fas fa-search text-xl mb-2">
+        </i>
+        <h2 class="font-semibold">
+         Find your answers
+        </h2>
+        <p class="text-gray-600 mt-2">
+         "What are some effective strategies for improving productivity and time management?"
+        </p>
+       </div>
+       <div class="bg-white p-4 rounded-lg shadow-md w-1/3">
+        <i class="fas fa-cogs text-xl mb-2">
+        </i>
+        <h2 class="font-semibold">
+         Choose your preference
+        </h2>
+        <p class="text-gray-600 mt-2">
+         "How can I enhance my skills in office management department?"
+        </p>
+       </div>
+      </div>
+     </div>
+     <!-- Chat Messages -->
+     <div class="space-y-4" id="chatBox">
+        
+        
+     </div>
+     <div class="flex items-start" id="think">
+        
+       </div>
+    </div>
+    <div class="mt-auto w-full flex items-center p-4">
+     <input class="flex-1 p-4 rounded-l-lg border border-gray-300" placeholder="Ask me anything..." type="text" id="userprompt"/>
+     <button class="bg-blue-500 text-white p-4 rounded-r-lg" onclick="test()">
+      <i class="fas fa-paper-plane" >
+      </i>
+     </button>
+    </div>
+   </div>
+  </div>
+
+  <script src="/static/home.js"></script>
+ </body>
+</html>
+
+
+
+<!-- /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 -->
