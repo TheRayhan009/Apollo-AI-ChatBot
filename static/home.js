@@ -40,7 +40,7 @@ function test(){
             let data=JSON.parse(response)
             console.log("done");
             console.log(data.reply);
-
+            
             document.getElementById("chatBox").insertAdjacentHTML("beforeend", `
                 <div class="flex items-start" id="bot">
                     <img alt="Bot avatar image" class="w-10 h-10 rounded-full mr-4" height="50" 
@@ -71,3 +71,4 @@ function scrollToBottom() {
     $("#chatBox").stop().animate({ scrollTop: $("#chatBox")[0].scrollHeight }, 500);
 
 }
+

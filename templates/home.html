@@ -140,7 +140,7 @@
   </div>
   {% load static %}
   <script>
-
+    let ren=0;
     function test(){
       console.log("hello");
   
@@ -183,19 +183,20 @@
               let data=JSON.parse(response)
               console.log("done");
               console.log(data.reply);
-  
+
               document.getElementById("chatBox").insertAdjacentHTML("beforeend", `
                   <div class="flex items-start" id="bot">
                       <img alt="Bot avatar image" class="w-10 h-10 rounded-full mr-4" height="50" 
                            src="https://storage.googleapis.com/a1aa/image/0LS9r2t2Iw_S4qExkh4IajU6z25uVyr3ciFQsgbjs1Y.jpg" width="50"/>
                       <div class="bg-gray-200 p-4 rounded-lg" style="max-width: 800px; overflow-x: auto;">
-                          <pre style="max-width: 800px; class="bg-gray-100 p-2 rounded-lg overflow-x-auto"><code class="language-python">${data.reply}</code></pre>
+                          <pre style="max-width: 800px; class="bg-gray-100 p-2 rounded-lg overflow-x-auto"><code class="language-python" id="txtBot${ren}"></code></pre>
                       </div>
                   </div>
               `);
+                
               document.getElementById("think").innerHTML = "";
-              
-              
+              $("#txtBot").val()
+              typeWriterEffect(data.reply,`#txtBot${ren}`);
               scrollToBottom()
   
   
@@ -215,12 +216,27 @@
   
   }
   
+  function typeWriterEffect(text, elementSelector) {
+    ren+=1;
+    let i = 0;
+    let r = "";
+    console.log("done");
+    function type() {
+      console.log("done");
+      if (i < text.length) {
+        r += text.charAt(i);
+        $(elementSelector).text(r); // Update the target element
+        i++;
+        setTimeout(type, 30); // Schedule next character after 30ms
+      }
+    }
+    
+    type();
+  }
+  
 
   </script>
   
  </body>
 </html>
 
-
-
-<!-- /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 -->
