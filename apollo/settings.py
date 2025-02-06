@@ -24,11 +24,7 @@ SECRET_KEY = 'django-insecure-w@!tayu901u_*r4jk--y_zj7!8j7xs+nddg2lmp8cwp#cvnr$q
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = [
-    "apollo-v2-1rr5.onrender.com",
-    "127.0.0.1",
-    "localhost",
-]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
